@@ -8,29 +8,13 @@ struct Int
   end
 end
 
-class Products
-  include Iterator(Int32)
-
-  def initialize
-    @i = 100
-    @j = 100
-  end
-
-  def next
-    output = @i*@j
-    if @j == 1000
-      if @i == 999
-        return Iterator::Stop::INSTANCE
-      else
-        @i += 1
-        @j = @i
-        output = @i*@j
-      end
-    else
-      @j += 1
+result = 0
+(100..999).each do |i|
+  (i..999).each do |j|
+    if i*j > result && (i*j).palindrome?
+      result = i*j
     end
-    return output
   end
 end
 
-puts Products.new.select(&.palindrome?).max
+puts result
