@@ -1,0 +1,13 @@
+name: project-euler-crystal
+version: 0.1.0
+
+authors:
+  - Dominic Muller <nicklink483@gmail.com>
+
+targets:
+  project-euler-crystal:
+    main: src/project-euler-crystal.cr
+
+crystal: 0.21.1
+
+license: MIT
